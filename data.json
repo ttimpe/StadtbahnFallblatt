@@ -1,0 +1,469 @@
+{
+  "gong": {
+    "notes": [
+      86,
+      83,
+      79
+    ],
+    "durationMs": 1200
+  },
+  "deviceLocation": "HBF",
+  "genericAudio": {
+    "nichtEinsteigen": "audio/NICHT_EINSTEIGEN.mp3",
+    "zugEndet": "audio/ENDET.mp3",
+    "einsatzwagen": "audio/E.mp3"
+  },
+  "stops": {
+    "HBF": {
+      "name": "Hbf.",
+      "audio": "audio/HBF.mp3",
+      "busConnection": true
+    },
+    "SCO": {
+      "name": "Schüco",
+      "audio": "audio/SCO.mp3"
+    },
+    "BHD": {
+      "name": "Baumheide",
+      "audio": "audio/BHD.mp3",
+      "busConnection": true
+    },
+    "BHS": {
+      "name": "Babenhausen Süd",
+      "audio": "audio/BHS.mp3",
+      "busConnection": true
+    },
+    "BNS": {
+      "name": "Sieker Mitte",
+      "audio": "audio/BNS.mp3",
+      "busConnection": false
+    },
+    "BRW": {
+      "name": "Brackwede",
+      "audio": "audio/BRW.mp3",
+      "busConnection": true
+    },
+    "BTH": {
+      "name": "Bethel",
+      "audio": "audio/BTH.mp3",
+      "busConnection": true
+    },
+    "JOH": {
+      "name": "Johannesstift",
+      "audio": "audio/JOH.mp3",
+      "busConnection": true
+    },
+    "JPL": {
+      "name": "Jahnplatz",
+      "audio": "audio/JPL.mp3",
+      "busConnection": true
+    },
+    "KRH": {
+      "name": "Krankenhaus Mitte",
+      "audio": "audio/KRH.mp3",
+      "busConnection": false
+    },
+    "LAG": {
+      "name": "Landgericht",
+      "audio": "audio/LAG.mp3",
+      "busConnection": false
+    },
+    "LOH": {
+      "name": "Lohmannshof",
+      "audio": "audio/LOH.mp3",
+      "busConnection": true
+    },
+    "MIL": {
+      "name": "Milse",
+      "audio": "audio/MIL.mp3",
+      "busConnection": true
+    },
+    "NOP": {
+      "name": "Nordpark",
+      "audio": "audio/NOP.mp3",
+      "busConnection": false
+    },
+    "OBN": {
+      "name": "Obernstr.",
+      "audio": "audio/OBN.mp3",
+      "busConnection": false
+    },
+    "OET": {
+      "name": "Oetkerhalle",
+      "audio": "audio/OET.mp3",
+      "busConnection": false
+    },
+    "RTH": {
+      "name": "Rathaus",
+      "audio": "audio/RTH.mp3",
+      "busConnection": false
+    },
+    "SEE": {
+      "name": "Senne",
+      "audio": "audio/SEE.mp3",
+      "busConnection": true
+    },
+    "SIE": {
+      "name": "Sieker",
+      "audio": "audio/SIE.mp3",
+      "busConnection": true
+    },
+    "STZ": {
+      "name": "Stieghorst",
+      "audio": "audio/STZ.mp3",
+      "busConnection": true
+    },
+    "UNI": {
+      "name": "Universität",
+      "audio": "audio/UNI.mp3",
+      "busConnection": true
+    }
+  },
+  "destinations": [
+    {
+      "id": "SCH",
+      "name": "SCHILDESCHE",
+      "audio": "audio/SCH.mp3"
+    },
+    {
+      "id": "BRW",
+      "name": "BRACKWEDE",
+      "audio": "audio/BRW.mp3"
+    },
+    {
+      "id": "SEE",
+      "name": "SENNE",
+      "audio": "audio/SEE.mp3"
+    },
+    {
+      "id": "SIE",
+      "name": "SIEKER",
+      "audio": "audio/SIE.mp3"
+    },
+    {
+      "id": "BHD",
+      "name": "BAUMHEIDE",
+      "audio": "audio/BHD.mp3"
+    },
+    {
+      "id": "MIL",
+      "name": "MILSE",
+      "audio": "audio/MIL.mp3"
+    },
+    {
+      "id": "BHS",
+      "name": "BABENHAUSEN SÜD",
+      "audio": "audio/BHS.mp3"
+    },
+    {
+      "id": "BNS",
+      "name": "SIEKER MITTE",
+      "audio": "audio/BNS1.mp3"
+    },
+    {
+      "id": "STZ",
+      "name": "STIEGHORST",
+      "audio": "audio/STZ.mp3"
+    },
+    {
+      "id": "OET",
+      "name": "OETKERHALLE",
+      "audio": "audio/OET.mp3"
+    },
+    {
+      "id": "UNI",
+      "name": "UNIVERSITÄT",
+      "audio": "audio/UNI1.mp3"
+    },
+    {
+      "id": "LOH",
+      "name": "LOHMANNSHOF",
+      "audio": "audio/LOH.mp3"
+    },
+    {
+      "id": "RTH",
+      "name": "RATHAUS",
+      "audio": "audio/RTH.mp3"
+    },
+    {
+      "id": "LAG",
+      "name": "LANDGERICHT",
+      "audio": "audio/LAG1.mp3"
+    },
+    {
+      "id": "OBN",
+      "name": "OBERNSTRASSE",
+      "audio": "audio/OBN.mp3"
+    },
+    {
+      "id": "HEE",
+      "name": "HEEPEN",
+      "audio": "audio/HEE.mp3"
+    },
+    {
+      "id": "SST",
+      "name": "SENNESTADT",
+      "audio": "audio/SST.mp3"
+    },
+    {
+      "id": "HBF",
+      "name": "HAUPTBAHNHOF",
+      "audio": "audio/HBF.mp3"
+    },
+    {
+      "id": "SCO",
+      "name": "Schüco",
+      "audio": "audio/SCO.wav"
+    },
+    {
+      "id": "KKK",
+      "name": "Kattenkamp",
+      "audio": "audio/KAT.wav"
+    }
+  ],
+  "lines": [
+    {
+      "id": "1",
+      "number": " 1",
+      "platform": " 4",
+      "audio": "audio/L1.mp3",
+      "backgroundColor": "blue",
+      "textColor": "white",
+      "destinations": [
+        {
+          "id": "SCH",
+          "route": [
+            "RTH",
+            "JPL",
+            "HBF",
+            "JOH"
+          ]
+        },
+        {
+          "id": "KKK",
+          "route": [
+            "RTH",
+            "JPL",
+            "HBF",
+            "JOH"
+          ]
+        },
+        {
+          "id": "BRW",
+          "route": [
+            "HBF",
+            "JPL",
+            "RTH",
+            "BTH"
+          ]
+        },
+        {
+          "id": "SEE",
+          "route": [
+            "HBF",
+            "JPL",
+            "RTH",
+            "BTH",
+            "BRW"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "number": " 2",
+      "platform": " 2",
+      "audio": "audio/L2.mp3",
+      "backgroundColor": "green",
+      "textColor": "white",
+      "destinations": [
+        {
+          "id": "SIE",
+          "route": [
+            "HBF",
+            "JPL",
+            "RTH",
+            "LAG"
+          ]
+        },
+        {
+          "id": "SCO",
+          "route": [
+            "RTH",
+            "JPL",
+            "HBF",
+            "Herforder Str.",
+            "SCO"
+          ]
+        },
+        {
+          "id": "BHD",
+          "route": [
+            "RTH",
+            "JPL",
+            "HBF",
+            "SCO"
+          ]
+        },
+        {
+          "id": "MIL",
+          "route": [
+            "JPL",
+            "HBF",
+            "SCO",
+            "BHD"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "number": " 3",
+      "platform": " 2",
+      "audio": "audio/L3.mp3",
+      "backgroundColor": "yellow",
+      "textColor": "black",
+      "destinations": [
+        {
+          "id": "BHS",
+          "route": [
+            "RTH",
+            "JPL",
+            "HBF",
+            "NOP"
+          ]
+        },
+        {
+          "id": "BNS",
+          "route": [
+            "HBF",
+            "JPL",
+            "RTH",
+            "KRH"
+          ]
+        },
+        {
+          "id": "STZ",
+          "route": [
+            "HBF",
+            "JPL",
+            "RTH",
+            "KRH",
+            "BNS"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "number": " 4",
+      "platform": " 4",
+      "audio": "audio/L4.mp3",
+      "backgroundColor": "red",
+      "textColor": "white",
+      "destinations": [
+        {
+          "id": "OET",
+          "route": [
+            "RTH",
+            "JPL",
+            "HBF"
+          ]
+        },
+        {
+          "id": "HBF",
+          "route": [
+            "RTH",
+            "JPL",
+            "HBF"
+          ]
+        },
+        {
+          "id": "UNI",
+          "route": [
+            "RTH",
+            "JPL",
+            "HBF",
+            "OET"
+          ]
+        },
+        {
+          "id": "LOH",
+          "route": [
+            "RTH",
+            "JPL",
+            "HBF",
+            "OET",
+            "UNI"
+          ]
+        },
+        {
+          "id": "RTH",
+          "route": [
+            "HBF",
+            "JPL",
+            "RTH"
+          ]
+        },
+        {
+          "id": "LAG",
+          "route": [
+            "HBF",
+            "JPL",
+            "RTH"
+          ]
+        },
+        {
+          "id": "OBN",
+          "route": [
+            "HBF",
+            "JPL",
+            "RTH",
+            "LAG"
+          ]
+        },
+        {
+          "id": "BNS",
+          "route": [
+            "HBF",
+            "JPL",
+            "RTH",
+            "KRH"
+          ]
+        },
+        {
+          "id": "STZ",
+          "route": [
+            "HBF",
+            "JPL",
+            "RTH",
+            "KRH",
+            "BNS"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "number": " 5",
+      "platform": " 4",
+      "audio": "audio/L5.mp3",
+      "backgroundColor": "magenta",
+      "textColor": "white",
+      "destinations": [
+        {
+          "id": "HEE",
+          "route": [
+            "JPL"
+          ]
+        },
+        {
+          "id": "SST",
+          "route": [
+            "JPL"
+          ]
+        }
+      ]
+    }
+  ]
+}
