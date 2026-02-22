@@ -65,7 +65,7 @@
     },
     "LAG": {
       "name": "Landgericht",
-      "audio": "audio/LAG.mp3",
+      "audio": "audio/LAG1.mp3",
       "busConnection": false
     },
     "LOH": {
@@ -115,7 +115,7 @@
     },
     "UNI": {
       "name": "Universität",
-      "audio": "audio/UNI.mp3",
+      "audio": "audio/UNI1.mp3",
       "busConnection": true
     }
   },
@@ -188,7 +188,7 @@
     {
       "id": "LAG",
       "name": "LANDGERICHT",
-      "audio": "audio/LAG1.mp3"
+      "audio": "audio/LAG.mp3"
     },
     {
       "id": "OBN",
@@ -334,6 +334,14 @@
           ]
         },
         {
+          "id": "RTH",
+          "route": [
+            "HBF",
+            "JPL",
+            "RTH"
+          ]
+        },
+        {
           "id": "BNS",
           "route": [
             "HBF",
@@ -367,7 +375,8 @@
           "route": [
             "RTH",
             "JPL",
-            "HBF"
+            "HBF",
+            "OET"
           ]
         },
         {

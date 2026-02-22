@@ -421,9 +421,10 @@ async function triggerDisplayUpdate(lineId, destId) {
     audioSlices.push(isEinsatzwagen ? displayData.genericAudio.einsatzwagen : line.audio);
 
     // 2. Spoken route stops are derived directly from the visually calculated upcomingRoute
-    // Inject "Richtung" if we have route stops
+    // Always inject "Richtung"
+    audioSlices.push('audio/Richtung.mp3');
+
     if (upcomingRoute.length > 0) {
-        audioSlices.push('audio/Richtung.mp3');
         upcomingRoute.forEach(abbr => {
             const stop = displayData.stops[abbr];
             if (stop && stop.audio) {
@@ -672,7 +673,17 @@ async function preloadAudioSequence(urls) {
 
 async function playDecodedSequence(buffers) {
     stopCurrentAudio();
-    if (!audioCtx || audioCtx.state !== 'running') return;
+    if (!audioCtx) return;
+
+    // Resume context if Safari suspended the hardware graph during the visual flap animation
+    if (audioCtx.state === 'suspended') {
+        try {
+            await audioCtx.resume();
+        } catch (e) {
+            console.warn("Could not resume audio context", e);
+        }
+    }
+
     if (buffers.length === 0) return;
 
     return new Promise((resolve) => {
