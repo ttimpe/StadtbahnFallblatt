@@ -141,8 +141,14 @@
       "audio": null
     },
     "DT6": {
-      "name": "DT6",
-      "audio": null
+      "name": "Dürkopp Tor 6",
+      "audio": "audio/DT6.wav",
+      "efaId": "de:05711:10502"
+    },
+    "ATH": {
+      "name": "Altenhagen",
+      "audio": "audio/ATH.wav",
+      "efaId": "de:05711:10456"
     }
   },
   "destinations": [
@@ -172,8 +178,8 @@
     },
     {
       "id": "SCH",
-      "label": "SCHILDESCHE",
-      "name": "SCHILDESCHE",
+      "label": "Schildesche",
+      "name": "Schildesche",
       "audio": "audio/SCH.mp3"
     },
     {
@@ -227,14 +233,14 @@
     {
       "id": "MIL",
       "label": "Milse",
-      "name": "Milw3",
+      "name": "Milse",
       "audio": "audio/MIL.mp3"
     },
     {
       "id": "ATH",
       "label": "Altenhagen",
       "name": "Altenhagen",
-      "audio": null
+      "audio": "audio/ATH.wav"
     },
     {
       "id": "SIE",
@@ -279,6 +285,12 @@
       "audio": null
     },
     {
+      "id": "RTH",
+      "label": "Rathaus",
+      "name": "Rathaus",
+      "audio": "audio/RTH.mp3"
+    },
+    {
       "id": "OET",
       "label": "Oetkerhalle",
       "name": "Oetkerhalle",
@@ -300,13 +312,19 @@
       "id": "DT6",
       "label": "Dürkopp Tor 6",
       "name": "Dürkopp Tor 6",
-      "audio": null
+      "audio": "audio/DT6.wav"
     },
     {
       "id": "BLANK_8",
       "label": " ",
       "name": "(Leerfeld)",
       "audio": null
+    },
+    {
+      "id": "HBF",
+      "label": "Hauptbahnhof",
+      "name": "Hauptbahnhof",
+      "audio": "audio/HBF.mp3"
     }
   ],
   "lines": [

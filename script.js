@@ -50,6 +50,17 @@ async function init() {
     }
 }
 
+function buildStopHTML(abbr, isFirst) {
+    const stop = displayData.stops[abbr];
+    const name = (stop && stop.name) ? stop.name : abbr;
+    let inner = (isFirst ? '' : ' - ') + name;
+    if (stop && stop.busConnection) {
+        inner += ' <img class="bus-icon" src="bus.svg">';
+    }
+    inner += '&nbsp;';
+    return `<span class="stop-label">${inner}</span>`;
+}
+
 function populateDrums() {
     if (!displayData) return;
 
@@ -79,10 +90,7 @@ function populateDrums() {
     drums.routeFlaps = displayData.routes.map(route => {
         let routeText = route.label;
         if ((!routeText || routeText.trim() === "") && route.stops && route.stops.length > 0) {
-            routeText = route.stops.map(abbr => {
-                const stop = displayData.stops[abbr];
-                return (stop && stop.name) ? stop.name : abbr;
-            }).join(" - ");
+            routeText = route.stops.map((abbr, i) => buildStopHTML(abbr, i === 0)).join('');
         }
         return {
             id: route.id,
@@ -130,6 +138,12 @@ function setupControls() {
             option.textContent = `Gleis ${i}`;
             platformSelect.appendChild(option);
         }
+
+        if (count > 0) {
+            platformSelect.value = '1';
+            const platformNumEl = document.querySelector('.platform-number');
+            if (platformNumEl) platformNumEl.textContent = '1';
+        }
     };
 
     // Initialize platforms based on default location
@@ -147,6 +161,7 @@ function setupControls() {
         const platformNumEl = document.querySelector('.platform-number');
         if (platformNumEl) platformNumEl.textContent = e.target.value;
         updateTriggerState();
+        if (!destSelect.value) applyDefaultState(false);
     });
 
     // Populate logical lines (unique line numbers)
@@ -280,8 +295,10 @@ function processLiveData(data, selectedPlatform) {
 
     const now = new Date();
 
-    // Find relevant trips for our platform
+    // Find relevant trips for our platform, excluding cancelled ones
     const platformTrips = data.stopEvents.filter(event => {
+        if (Array.isArray(event.realtimeStatus) && event.realtimeStatus.includes('CANCELLED')) return false;
+
         const p1 = (event.location.properties.platform || "").toLowerCase();
         const p2 = (event.location.properties.platformName || "").toLowerCase();
         const sel = String(selectedPlatform).toLowerCase();
@@ -573,10 +590,7 @@ async function triggerDisplayUpdate(logicalLine, logicalDest, kursValue) {
     }
 
     if (routeFlapObj.isStopsBased) {
-        routeFlapObj.text = upcomingRoute.map(abbr => {
-            const stop = displayData.stops[abbr];
-            return (stop && stop.name) ? stop.name : abbr;
-        }).join(" - ");
+        routeFlapObj.text = upcomingRoute.map((abbr, i) => buildStopHTML(abbr, i === 0)).join('');
     }
 
     const audioSlices = [];
@@ -611,7 +625,8 @@ async function triggerDisplayUpdate(logicalLine, logicalDest, kursValue) {
 
 async function applyDefaultState(immediate = false) {
     let p1, p2, p3;
-    if (displayData.deviceLocation === 'RTH') {
+    const currentPlatform = document.getElementById('platformSelect').value;
+    if (displayData.deviceLocation === 'RTH' && currentPlatform === '1') {
         const lineId = 'BLANK_BLUE';
         const routeId = 'HEADER';
         const destId = 'RTH_STILL';
@@ -662,7 +677,7 @@ function setFlapImmediate(containerId, flapId) {
     const flap = document.querySelector(`#${containerId} .split-flap`);
     flap.dataset.index = idx;
     const obj = drum[idx];
-    flap.querySelectorAll('.text-content').forEach(el => el.textContent = obj.text);
+    flap.querySelectorAll('.text-content').forEach(el => el.innerHTML = obj.text);
     applyColorsToFlap(flap, obj);
 }
 
@@ -781,8 +796,8 @@ async function processFlipQueue(flap, sequence) {
         const obj = sequence[i];
 
         // 1. Prepare next state
-        nextHalf.querySelector('.text-content').textContent = obj.text;
-        nextBottom.querySelector('.text-content').textContent = obj.text;
+        nextHalf.querySelector('.text-content').innerHTML = obj.text;
+        nextBottom.querySelector('.text-content').innerHTML = obj.text;
         applyColorsToFlap(flap, obj);
 
         // 2. Play audio tick
@@ -796,7 +811,7 @@ async function processFlipQueue(flap, sequence) {
         await new Promise(r => setTimeout(r, 50));
 
         // 4. Swap bottom
-        bottom.querySelector('.text-content').textContent = obj.text;
+        bottom.querySelector('.text-content').innerHTML = obj.text;
         bottom.style.animation = 'none';
         void bottom.offsetWidth;
         bottom.style.animation = 'flipDownBottom 0.1s ease-out forwards';
@@ -804,7 +819,7 @@ async function processFlipQueue(flap, sequence) {
         await new Promise(r => setTimeout(r, 50));
 
         // 5. Cleanup
-        top.querySelector('.text-content').textContent = obj.text;
+        top.querySelector('.text-content').innerHTML = obj.text;
     }
 }
 

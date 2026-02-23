@@ -289,14 +289,26 @@ body {
     z-index: 2;
 }
 
+.stop-label {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.bus-icon {
+    height: 36px;
+    width: auto;
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 4px;
+}
+
 /* Specific scaling for route text to fit two lines perfectly across top and bottom halves */
 .module-route .text-content {
-    font-size: 50px;
-    /* Exactly matching the 50px height of a half flap */
+    font-size: 44px;
     line-height: 50px;
     /* Forces each line to take exactly 50px, aligning them with the physical split */
-    align-items: flex-start;
-    /* Starts text at the top rather than center, crucial for line-height alignment */
+    display: block;
+    /* Override flex so inline-block stop spans wrap naturally */
 }
 
 /* Center line number */
