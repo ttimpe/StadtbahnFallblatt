@@ -450,7 +450,10 @@
       "name": "Dürkopp Tor 6",
       "audio": "audio/DT6.wav",
       "ibis": {
-        "ziel": []
+        "ziel": [
+          145,
+          147
+        ]
       }
     },
     {
