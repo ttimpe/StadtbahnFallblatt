@@ -13,16 +13,23 @@
         <select id="devLocSelect">
             <option value="" disabled selected>Standort...</option>
         </select>
+        <select id="platformSelect">
+            <option value="" disabled selected>Gleis...</option>
+        </select>
+        <input type="text" id="kursInput" placeholder="Kurs" maxlength="2" style="width: 50px;">
         <select id="lineSelect">
             <option value="" disabled selected>Linie...</option>
         </select>
         <label>
             <input type="checkbox" id="einsatzCheck"> Einsatzwagen
         </label>
-        <select id="destSelect" disabled>
+        <select id="destSelect">
             <option value="" disabled selected>Ziel...</option>
         </select>
         <button id="triggerBtn" disabled>Go</button>
+        <label style="margin-left: 10px;">
+            <input type="checkbox" id="liveCheck"> Live Data
+        </label>
         <button id="resetBtn">Reset</button>
     </div>
 

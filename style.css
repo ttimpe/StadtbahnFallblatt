@@ -230,13 +230,7 @@ body {
     box-sizing: border-box;
 }
 
-/* Empty flaps should be white */
-.flap-top.empty,
-.flap-bottom.empty,
-.flap-next-half.empty,
-.flap-next-bottom.empty {
-    background-color: #fff !important;
-}
+
 
 /* Inner text container to allow proper centering across the two halves */
 .flap-top .text-content,

@@ -13,11 +13,13 @@
     "zugEndet": "audio/ENDET.mp3",
     "einsatzwagen": "audio/E.mp3"
   },
+  "efaEndpoint": "https://westfalenfahrplan.de/nwl-efa/XML_DM_REQUEST",
   "stops": {
     "HBF": {
       "name": "Hbf.",
-      "audio": "audio/HBF.mp3",
-      "busConnection": true
+      "audio": null,
+      "busConnection": true,
+      "efaId": "de:05711:5500"
     },
     "SCO": {
       "name": "Schüco",
@@ -31,7 +33,8 @@
     "BHS": {
       "name": "Babenhausen Süd",
       "audio": "audio/BHS.mp3",
-      "busConnection": true
+      "busConnection": true,
+      "efaId": "de:05711:5520"
     },
     "BNS": {
       "name": "Sieker Mitte",
@@ -41,22 +44,26 @@
     "BRW": {
       "name": "Brackwede",
       "audio": "audio/BRW.mp3",
-      "busConnection": true
+      "busConnection": true,
+      "efaId": "de:05711:5292"
     },
     "BTH": {
       "name": "Bethel",
       "audio": "audio/BTH.mp3",
-      "busConnection": true
+      "busConnection": true,
+      "efaId": "de:05711:5083"
     },
     "JOH": {
       "name": "Johannesstift",
       "audio": "audio/JOH.mp3",
-      "busConnection": true
+      "busConnection": true,
+      "efaId": "de:05711:5274"
     },
     "JPL": {
       "name": "Jahnplatz",
       "audio": "audio/JPL.mp3",
-      "busConnection": true
+      "busConnection": true,
+      "efaId": "de:05711:5272"
     },
     "KRH": {
       "name": "Krankenhaus Mitte",
@@ -81,7 +88,8 @@
     "NOP": {
       "name": "Nordpark",
       "audio": "audio/NOP.mp3",
-      "busConnection": false
+      "busConnection": false,
+      "efaId": "de:05711:5171"
     },
     "OBN": {
       "name": "Obernstr.",
@@ -96,7 +104,8 @@
     "RTH": {
       "name": "Rathaus",
       "audio": "audio/RTH.mp3",
-      "busConnection": false
+      "busConnection": false,
+      "efaId": "de:05711:5465"
     },
     "SEE": {
       "name": "Senne",
@@ -117,362 +126,954 @@
       "name": "Universität",
       "audio": "audio/UNI1.mp3",
       "busConnection": true
+    },
+    "DEC": {
+      "name": "Deciusstr.",
+      "audio": null,
+      "efaId": "de:05711:5236"
+    },
+    "SFP": {
+      "name": "Siegfriedplatz",
+      "audio": null
+    },
+    "BUL": {
+      "name": "Bültmannshof",
+      "audio": null
+    },
+    "DT6": {
+      "name": "DT6",
+      "audio": null
     }
   },
   "destinations": [
     {
+      "id": "NICHT_EINSTEIGEN",
+      "label": "Nicht Einsteigen",
+      "name": "Nicht Einsteigen",
+      "audio": "audio/NICHT_EINSTEIGEN.mp3"
+    },
+    {
+      "id": "SONDERFAHRT",
+      "label": "Sonderfahrt",
+      "name": "Sonderfahrt",
+      "audio": "audio/NICHT_EINSTEIGEN.mp3"
+    },
+    {
+      "id": "CITYEXPRESS",
+      "label": "City-Express",
+      "name": "CITYEXPRESS",
+      "audio": "audio/NICHT_EINSTEIGEN.mp3"
+    },
+    {
+      "id": "RTH_STILL",
+      "label": "Jahnplatz/HBF",
+      "name": "Jahnplatz/HBF",
+      "audio": null
+    },
+    {
       "id": "SCH",
+      "label": "SCHILDESCHE",
       "name": "SCHILDESCHE",
       "audio": "audio/SCH.mp3"
     },
     {
+      "id": "BLANK_1",
+      "label": " ",
+      "name": "(Leerfeld)",
+      "audio": null
+    },
+    {
+      "id": "SUB",
+      "label": "Sudbrackstr.",
+      "name": "Sudbrackstr.",
+      "audio": "audio/SUB.wav"
+    },
+    {
+      "id": "KKK",
+      "label": "Kattenkamp",
+      "name": "Kattenkamp",
+      "audio": "audio/KAT.wav"
+    },
+    {
+      "id": "BRB",
+      "label": "Brackwede Bf.",
+      "name": "Brackwede Bf.",
+      "audio": "audio/BRB.mp3"
+    },
+    {
       "id": "BRW",
-      "name": "BRACKWEDE",
+      "label": "Brackwede",
+      "name": "Brackwede",
       "audio": "audio/BRW.mp3"
     },
     {
       "id": "SEE",
-      "name": "SENNE",
+      "label": "Senne",
+      "name": "Senne",
       "audio": "audio/SEE.mp3"
     },
     {
-      "id": "SIE",
-      "name": "SIEKER",
-      "audio": "audio/SIE.mp3"
-    },
-    {
-      "id": "BHD",
-      "name": "BAUMHEIDE",
-      "audio": "audio/BHD.mp3"
-    },
-    {
-      "id": "MIL",
-      "name": "MILSE",
-      "audio": "audio/MIL.mp3"
-    },
-    {
-      "id": "BHS",
-      "name": "BABENHAUSEN SÜD",
-      "audio": "audio/BHS.mp3"
-    },
-    {
-      "id": "BNS",
-      "name": "SIEKER MITTE",
-      "audio": "audio/BNS1.mp3"
-    },
-    {
-      "id": "STZ",
-      "name": "STIEGHORST",
-      "audio": "audio/STZ.mp3"
-    },
-    {
-      "id": "OET",
-      "name": "OETKERHALLE",
-      "audio": "audio/OET.mp3"
-    },
-    {
-      "id": "UNI",
-      "name": "UNIVERSITÄT",
-      "audio": "audio/UNI1.mp3"
-    },
-    {
-      "id": "LOH",
-      "name": "LOHMANNSHOF",
-      "audio": "audio/LOH.mp3"
-    },
-    {
-      "id": "RTH",
-      "name": "RATHAUS",
-      "audio": "audio/RTH.mp3"
-    },
-    {
-      "id": "LAG",
-      "name": "LANDGERICHT",
-      "audio": "audio/LAG.mp3"
-    },
-    {
-      "id": "OBN",
-      "name": "OBERNSTRASSE",
-      "audio": "audio/OBN.mp3"
-    },
-    {
-      "id": "HEE",
-      "name": "HEEPEN",
-      "audio": "audio/HEE.mp3"
-    },
-    {
-      "id": "SST",
-      "name": "SENNESTADT",
-      "audio": "audio/SST.mp3"
-    },
-    {
-      "id": "HBF",
-      "name": "HAUPTBAHNHOF",
-      "audio": "audio/HBF.mp3"
-    },
-    {
       "id": "SCO",
+      "label": "Schüco",
       "name": "Schüco",
       "audio": "audio/SCO.wav"
     },
     {
-      "id": "KKK",
-      "name": "Kattenkamp",
-      "audio": "audio/KAT.wav"
+      "id": "BHD",
+      "label": "Baumheide",
+      "name": "Baumheide",
+      "audio": "audio/BHD.mp3"
+    },
+    {
+      "id": "MIL",
+      "label": "Milse",
+      "name": "Milw3",
+      "audio": "audio/MIL.mp3"
+    },
+    {
+      "id": "ATH",
+      "label": "Altenhagen",
+      "name": "Altenhagen",
+      "audio": null
+    },
+    {
+      "id": "SIE",
+      "label": "Sieker",
+      "name": "Sieker",
+      "audio": "audio/SIE.mp3"
+    },
+    {
+      "id": "BLANK_5",
+      "label": " ",
+      "name": "(Leerfeld)",
+      "audio": null
+    },
+    {
+      "id": "ADH",
+      "label": "Auf der Hufe",
+      "name": "Auf der Hufe",
+      "audio": "audio/ADH.mp3"
+    },
+    {
+      "id": "BHS",
+      "label": "Babenhausen Süd",
+      "name": "Babenhausen Süd",
+      "audio": "audio/BHS.mp3"
+    },
+    {
+      "id": "BNS",
+      "label": "Sieker Mitte",
+      "name": "Sieker Mitte",
+      "audio": "audio/BNS1.mp3"
+    },
+    {
+      "id": "STZ",
+      "label": "Stieghorst",
+      "name": "Stieghorst",
+      "audio": "audio/STZ1.mp3"
+    },
+    {
+      "id": "BLANK_7",
+      "label": " ",
+      "name": "(Leerfeld)",
+      "audio": null
+    },
+    {
+      "id": "OET",
+      "label": "Oetkerhalle",
+      "name": "Oetkerhalle",
+      "audio": "audio/OET.mp3"
+    },
+    {
+      "id": "UNI",
+      "label": "Universität",
+      "name": "Universität",
+      "audio": "audio/UNI1.mp3"
+    },
+    {
+      "id": "LOH",
+      "label": "Lohmannshof",
+      "name": "Lohmannshof",
+      "audio": "audio/LOH.mp3"
+    },
+    {
+      "id": "DT6",
+      "label": "Dürkopp Tor 6",
+      "name": "Dürkopp Tor 6",
+      "audio": null
+    },
+    {
+      "id": "BLANK_8",
+      "label": " ",
+      "name": "(Leerfeld)",
+      "audio": null
     }
   ],
   "lines": [
     {
-      "id": "1",
-      "number": " 1",
-      "platform": " 4",
+      "id": "NO_SMOKING",
+      "text": "🚭",
+      "audio": null,
+      "backgroundColor": "white",
+      "textColor": "black"
+    },
+    {
+      "id": "BLANK_BLUE",
+      "text": "",
+      "audio": null,
+      "backgroundColor": "navy",
+      "textColor": "white"
+    },
+    {
+      "id": "L1",
+      "text": " 1",
       "audio": "audio/L1.mp3",
-      "backgroundColor": "blue",
-      "textColor": "white",
-      "destinations": [
-        {
-          "id": "SCH",
-          "route": [
-            "RTH",
-            "JPL",
-            "HBF",
-            "JOH"
-          ]
-        },
-        {
-          "id": "KKK",
-          "route": [
-            "RTH",
-            "JPL",
-            "HBF",
-            "JOH"
-          ]
-        },
-        {
-          "id": "BRW",
-          "route": [
-            "HBF",
-            "JPL",
-            "RTH",
-            "BTH"
-          ]
-        },
-        {
-          "id": "SEE",
-          "route": [
-            "HBF",
-            "JPL",
-            "RTH",
-            "BTH",
-            "BRW"
-          ]
-        }
-      ]
+      "backgroundColor": "rgb(0, 159, 226)",
+      "textColor": "white"
     },
     {
-      "id": "2",
-      "number": " 2",
-      "platform": " 2",
+      "id": "L1E",
+      "text": "E",
+      "audio": "audio/E.mp3",
+      "backgroundColor": "rgb(0, 159, 226)",
+      "textColor": "white"
+    },
+    {
+      "id": "L12_B",
+      "text": "12",
+      "audio": "audio/L12.mp3",
+      "backgroundColor": "rgb(0, 159, 226)",
+      "textColor": "white"
+    },
+    {
+      "id": "L13_B",
+      "text": "13",
+      "audio": "audio/L13.mp3",
+      "backgroundColor": "rgb(0, 159, 226)",
+      "textColor": "white"
+    },
+    {
+      "id": "L14_B",
+      "text": "14",
+      "audio": "audio/L14.mp3",
+      "backgroundColor": "rgb(0, 159, 226)",
+      "textColor": "white"
+    },
+    {
+      "id": "L16_B",
+      "text": "16",
+      "audio": "audio/L16.mp3",
+      "backgroundColor": "rgb(0, 159, 226)",
+      "textColor": "white"
+    },
+    {
+      "id": "L17_B",
+      "text": "17",
+      "audio": "audio/L17.mp3",
+      "backgroundColor": "rgb(0, 159, 226)",
+      "textColor": "white"
+    },
+    {
+      "id": "L18_B",
+      "text": "18",
+      "audio": null,
+      "backgroundColor": "rgb(0, 159, 226)",
+      "textColor": "white"
+    },
+    {
+      "id": "BLANK_GREEN",
+      "text": " ",
+      "audio": null,
+      "backgroundColor": "navy",
+      "textColor": "white"
+    },
+    {
+      "id": "L2",
+      "text": "2",
       "audio": "audio/L2.mp3",
-      "backgroundColor": "green",
-      "textColor": "white",
-      "destinations": [
-        {
-          "id": "SIE",
-          "route": [
-            "HBF",
-            "JPL",
-            "RTH",
-            "LAG"
-          ]
-        },
-        {
-          "id": "SCO",
-          "route": [
-            "RTH",
-            "JPL",
-            "HBF",
-            "Herforder Str.",
-            "SCO"
-          ]
-        },
-        {
-          "id": "BHD",
-          "route": [
-            "RTH",
-            "JPL",
-            "HBF",
-            "SCO"
-          ]
-        },
-        {
-          "id": "MIL",
-          "route": [
-            "JPL",
-            "HBF",
-            "SCO",
-            "BHD"
-          ]
-        }
-      ]
+      "backgroundColor": "rgb(0, 150, 65)",
+      "textColor": "white"
     },
     {
-      "id": "3",
-      "number": " 3",
-      "platform": " 2",
+      "id": "L2E",
+      "text": "E",
+      "audio": "audio/E.mp3",
+      "backgroundColor": "rgb(0, 150, 65)",
+      "textColor": "white"
+    },
+    {
+      "id": "L12_G",
+      "text": "12",
+      "audio": null,
+      "backgroundColor": "rgb(0, 150, 65)",
+      "textColor": "white"
+    },
+    {
+      "id": "L13_G",
+      "text": "13",
+      "audio": "audio/L13.mp3",
+      "backgroundColor": "rgb(0, 150, 65)",
+      "textColor": "white"
+    },
+    {
+      "id": "L14_G",
+      "text": "14",
+      "audio": "audio/L14.mp3",
+      "backgroundColor": "rgb(0, 150, 65)",
+      "textColor": "white"
+    },
+    {
+      "id": "L15_G",
+      "text": "15",
+      "audio": "audio/L15.mp3",
+      "backgroundColor": "rgb(0, 150, 65)",
+      "textColor": "white"
+    },
+    {
+      "id": "L19_G",
+      "text": "19",
+      "audio": "audio/L19.mp3",
+      "backgroundColor": "rgb(0, 150, 65)",
+      "textColor": "white"
+    },
+    {
+      "id": "BLANK_YELLOW",
+      "text": " ",
+      "audio": null,
+      "backgroundColor": "navy",
+      "textColor": "black"
+    },
+    {
+      "id": "L3",
+      "text": " 3",
       "audio": "audio/L3.mp3",
-      "backgroundColor": "yellow",
-      "textColor": "black",
-      "destinations": [
-        {
-          "id": "BHS",
-          "route": [
-            "RTH",
-            "JPL",
-            "HBF",
-            "NOP"
-          ]
-        },
-        {
-          "id": "RTH",
-          "route": [
-            "HBF",
-            "JPL",
-            "RTH"
-          ]
-        },
-        {
-          "id": "BNS",
-          "route": [
-            "HBF",
-            "JPL",
-            "RTH",
-            "KRH"
-          ]
-        },
-        {
-          "id": "STZ",
-          "route": [
-            "HBF",
-            "JPL",
-            "RTH",
-            "KRH",
-            "BNS"
-          ]
-        }
-      ]
+      "backgroundColor": "rgb(255, 237, 0)",
+      "textColor": "black"
     },
     {
-      "id": "4",
-      "number": " 4",
-      "platform": " 4",
+      "id": "L3E",
+      "text": "E",
+      "audio": "audio/E.mp3",
+      "backgroundColor": "rgb(255, 237, 0)",
+      "textColor": "black"
+    },
+    {
+      "id": "L15_Y",
+      "text": "15",
+      "audio": "audio/L15.mp3",
+      "backgroundColor": "rgb(255, 237, 0)",
+      "textColor": "black"
+    },
+    {
+      "id": "L16_Y",
+      "text": "16",
+      "audio": "audio/L16.mp3",
+      "backgroundColor": "rgb(255, 237, 0)",
+      "textColor": "black"
+    },
+    {
+      "id": "L17_Y",
+      "text": "17",
+      "audio": "audio/L17.mp3",
+      "backgroundColor": "rgb(255, 237, 0)",
+      "textColor": "black"
+    },
+    {
+      "id": "L18_Y",
+      "text": "18",
+      "audio": null,
+      "backgroundColor": "rgb(255, 237, 0)",
+      "textColor": "black"
+    },
+    {
+      "id": "L19_Y",
+      "text": "19",
+      "audio": "audio/L19.mp3",
+      "backgroundColor": "rgb(255, 237, 0)",
+      "textColor": "black"
+    },
+    {
+      "id": "BLANK_YELLOW_2",
+      "text": "",
+      "audio": null,
+      "backgroundColor": "rgb(255, 237, 0)",
+      "textColor": "black"
+    },
+    {
+      "id": "L10_Y",
+      "text": "10",
+      "audio": "audio/L10.mp3",
+      "backgroundColor": "rgb(255, 237, 0)",
+      "textColor": "black"
+    },
+    {
+      "id": "BLANK_RED",
+      "text": "",
+      "audio": null,
+      "backgroundColor": "navy",
+      "textColor": "white"
+    },
+    {
+      "id": "L4",
+      "text": " 4",
       "audio": "audio/L4.mp3",
-      "backgroundColor": "red",
-      "textColor": "white",
-      "destinations": [
-        {
-          "id": "OET",
-          "route": [
-            "RTH",
-            "JPL",
-            "HBF",
-            "OET"
-          ]
-        },
-        {
-          "id": "HBF",
-          "route": [
-            "RTH",
-            "JPL",
-            "HBF"
-          ]
-        },
-        {
-          "id": "UNI",
-          "route": [
-            "RTH",
-            "JPL",
-            "HBF",
-            "OET"
-          ]
-        },
-        {
-          "id": "LOH",
-          "route": [
-            "RTH",
-            "JPL",
-            "HBF",
-            "OET",
-            "UNI"
-          ]
-        },
-        {
-          "id": "RTH",
-          "route": [
-            "HBF",
-            "JPL",
-            "RTH"
-          ]
-        },
-        {
-          "id": "LAG",
-          "route": [
-            "HBF",
-            "JPL",
-            "RTH"
-          ]
-        },
-        {
-          "id": "OBN",
-          "route": [
-            "HBF",
-            "JPL",
-            "RTH",
-            "LAG"
-          ]
-        },
-        {
-          "id": "BNS",
-          "route": [
-            "HBF",
-            "JPL",
-            "RTH",
-            "KRH"
-          ]
-        },
-        {
-          "id": "STZ",
-          "route": [
-            "HBF",
-            "JPL",
-            "RTH",
-            "KRH",
-            "BNS"
-          ]
-        }
+      "backgroundColor": "rgb(227, 6, 20)",
+      "textColor": "white"
+    },
+    {
+      "id": "L4E",
+      "text": "E",
+      "audio": "audio/E.mp3",
+      "backgroundColor": "rgb(227, 6, 20)",
+      "textColor": "white"
+    },
+    {
+      "id": "L10_R",
+      "text": "10",
+      "audio": "audio/L10.mp3",
+      "backgroundColor": "rgb(227, 6, 20)",
+      "textColor": "white"
+    }
+  ],
+  "routes": [
+    {
+      "id": "HEADER",
+      "label": "StadtBahnen in Richtung",
+      "stops": []
+    },
+    {
+      "id": "RTH-SCH",
+      "label": "",
+      "stops": [
+        "RTH",
+        "JPL",
+        "HBF",
+        "JOH",
+        "DEC"
       ]
     },
     {
-      "id": "5",
-      "number": " 5",
-      "platform": " 4",
-      "audio": "audio/L5.mp3",
-      "backgroundColor": "magenta",
-      "textColor": "white",
-      "destinations": [
-        {
-          "id": "HEE",
-          "route": [
-            "JPL"
-          ]
-        },
-        {
-          "id": "SST",
-          "route": [
-            "JPL"
-          ]
-        }
+      "id": "HBF-SEE",
+      "label": "",
+      "stops": [
+        "HBF",
+        "JPL",
+        "RTH",
+        "BTH",
+        "BRW"
       ]
+    },
+    {
+      "id": "HBF-BRW",
+      "label": "",
+      "stops": [
+        "HBF",
+        "JPL",
+        "RTH",
+        "BTH"
+      ]
+    },
+    {
+      "id": "BLANK",
+      "label": " ",
+      "stops": []
+    },
+    {
+      "id": "RTH-MIL",
+      "label": "",
+      "stops": [
+        "RTH",
+        "JPL",
+        "HBF",
+        "BHD"
+      ]
+    },
+    {
+      "id": "RTH-ATH",
+      "label": "",
+      "stops": [
+        "RTH",
+        "JPL",
+        "HBF",
+        "BHD",
+        "MIL"
+      ]
+    },
+    {
+      "id": "RTH-BHD",
+      "label": "",
+      "stops": [
+        "RTH",
+        "JPL",
+        "HBF",
+        "Herforder Str."
+      ]
+    },
+    {
+      "id": "HBF-SIE",
+      "label": null,
+      "stops": [
+        "HBF",
+        "JPL",
+        "RTH",
+        "LAG"
+      ]
+    },
+    {
+      "id": "RTH-BHS",
+      "label": null,
+      "stops": [
+        "RTH",
+        "JPL",
+        "HBF",
+        "Jöllenbecker Str."
+      ]
+    },
+    {
+      "id": "HBF-STZ",
+      "label": null,
+      "stops": [
+        "HBF",
+        "JPL",
+        "RTH",
+        "KRH",
+        "BNS"
+      ]
+    },
+    {
+      "id": "HBF-BNS",
+      "label": null,
+      "stops": [
+        "HBF",
+        "JPL",
+        "RTH",
+        "KRH"
+      ]
+    },
+    {
+      "id": "RTH-LOH",
+      "label": null,
+      "stops": [
+        "RTH",
+        "JPL",
+        "HBF",
+        "SFP",
+        "OET",
+        "UNI"
+      ]
+    },
+    {
+      "id": "RTH-UNI",
+      "label": null,
+      "stops": [
+        "HBF",
+        "JPL",
+        "RTH",
+        "SFP",
+        "OET"
+      ]
+    },
+    {
+      "id": "RTH-OET",
+      "label": null,
+      "stops": [
+        "RTH",
+        "JPL",
+        "HBF",
+        "SFP"
+      ]
+    },
+    {
+      "id": "HBF-DT6",
+      "label": null,
+      "stops": [
+        "HBF",
+        "JPL",
+        "RTH",
+        "DT6"
+      ]
+    }
+  ],
+  "trips": [
+    {
+      "line": "1",
+      "route": "RTH-SCH",
+      "dest": "SCH",
+      "flaps": {
+        "line": "L1",
+        "route": "RTH-SCH",
+        "dest": "SCH"
+      }
+    },
+    {
+      "line": "1",
+      "route": "RTH-KKK",
+      "dest": "KKK",
+      "flaps": {
+        "line": "L1",
+        "route": "RTH-KKK",
+        "dest": "KKK"
+      }
+    },
+    {
+      "line": "1",
+      "route": "R1",
+      "dest": "SEE",
+      "flaps": {
+        "line": "L1",
+        "route": "HBF-SEE",
+        "dest": "SEE"
+      }
+    },
+    {
+      "line": "1",
+      "route": "HBF-BRW",
+      "dest": "BRW",
+      "flaps": {
+        "line": "L1",
+        "route": "HBF-BRW",
+        "dest": "BRW"
+      }
+    },
+    {
+      "line": "1",
+      "route": "RTH-SCH",
+      "dest": "SCH",
+      "flaps": {
+        "line": "L1",
+        "route": "RTH-SCH",
+        "dest": "SCH"
+      }
+    },
+    {
+      "line": "12",
+      "route": "RTH-KKK",
+      "dest": "KKK",
+      "flaps": {
+        "line": "L12_B",
+        "route": "RTH-KKK",
+        "dest": "KKK"
+      }
+    },
+    {
+      "line": "12",
+      "route": "R1",
+      "dest": "SEE",
+      "flaps": {
+        "line": "L12_B",
+        "route": "HBF-SEE",
+        "dest": "SEE"
+      }
+    },
+    {
+      "line": "12",
+      "route": "HBF-BRW",
+      "dest": "BRW",
+      "flaps": {
+        "line": "L12_B",
+        "route": "HBF-BRW",
+        "dest": "BRW"
+      }
+    },
+    {
+      "line": "12",
+      "route": "RTH-SCH",
+      "dest": "SCH",
+      "flaps": {
+        "line": "L12_B",
+        "route": "RTH-SCH",
+        "dest": "SCH"
+      }
+    },
+    {
+      "line": "13",
+      "route": "RTH-KKK",
+      "dest": "KKK",
+      "flaps": {
+        "line": "L13_B",
+        "route": "RTH-KKK",
+        "dest": "KKK"
+      }
+    },
+    {
+      "line": "13",
+      "route": "HBF-SEE",
+      "dest": "SEE",
+      "flaps": {
+        "line": "L13_B",
+        "route": "HBF-SEE",
+        "dest": "SEE"
+      }
+    },
+    {
+      "line": "13",
+      "route": "HBF-BRW",
+      "dest": "BRW",
+      "flaps": {
+        "line": "L13_B",
+        "route": "HBF-BRW",
+        "dest": "BRW"
+      }
+    },
+    {
+      "line": "14",
+      "route": "RTH-SCH",
+      "dest": "SCH",
+      "flaps": {
+        "line": "L14_B",
+        "route": "RTH-SCH",
+        "dest": "SCH"
+      }
+    },
+    {
+      "line": "14",
+      "route": "RTH-KKK",
+      "dest": "KKK",
+      "flaps": {
+        "line": "L14_B",
+        "route": "RTH-KKK",
+        "dest": "KKK"
+      }
+    },
+    {
+      "line": "14",
+      "route": "HBF-SEE",
+      "dest": "SEE",
+      "flaps": {
+        "line": "L14_B",
+        "route": "HBF-SEE",
+        "dest": "SEE"
+      }
+    },
+    {
+      "line": "14",
+      "route": "HBF-BRW",
+      "dest": "BRW",
+      "flaps": {
+        "line": "L14_B",
+        "route": "HBF-BRW",
+        "dest": "BRW"
+      }
+    },
+    {
+      "line": "16",
+      "route": "RTH-SCH",
+      "dest": "SCH",
+      "flaps": {
+        "line": "L16_B",
+        "route": "RTH-SCH",
+        "dest": "SCH"
+      }
+    },
+    {
+      "line": "16",
+      "route": "RTH-KKK",
+      "dest": "KKK",
+      "flaps": {
+        "line": "L16_B",
+        "route": "RTH-KKK",
+        "dest": "KKK"
+      }
+    },
+    {
+      "line": "16",
+      "route": "HBF-SEE",
+      "dest": "SEE",
+      "flaps": {
+        "line": "L16_B",
+        "route": "HBF-SEE",
+        "dest": "SEE"
+      }
+    },
+    {
+      "line": "16",
+      "route": "HBF-BRW",
+      "dest": "BRW",
+      "flaps": {
+        "line": "L16_B",
+        "route": "HBF-BRW",
+        "dest": "BRW"
+      }
+    },
+    {
+      "line": "18",
+      "route": "RTH-SCH",
+      "dest": "SCH",
+      "flaps": {
+        "line": "L18_B",
+        "route": "RTH-SCH",
+        "dest": "SCH"
+      }
+    },
+    {
+      "line": "18",
+      "route": "RTH-KKK",
+      "dest": "KKK",
+      "flaps": {
+        "line": "L18_B",
+        "route": "RTH-KKK",
+        "dest": "KKK"
+      }
+    },
+    {
+      "line": "18",
+      "route": "HBF-SEE",
+      "dest": "SEE",
+      "flaps": {
+        "line": "L18_B",
+        "route": "HBF-SEE",
+        "dest": "SEE"
+      }
+    },
+    {
+      "line": "18",
+      "route": "HBF-BRW",
+      "dest": "BRW",
+      "flaps": {
+        "line": "L18_B",
+        "route": "HBF-BRW",
+        "dest": "BRW"
+      }
+    },
+    {
+      "line": "2",
+      "route": "RTH-ATH",
+      "dest": "ATH",
+      "flaps": {
+        "line": "L2",
+        "route": "RTH-ATH",
+        "dest": "ATH"
+      }
+    },
+    {
+      "line": "2",
+      "route": "RTH-MIL",
+      "dest": "MIL",
+      "flaps": {
+        "line": "L2",
+        "route": "RTH-MIL",
+        "dest": "MIL"
+      }
+    },
+    {
+      "line": "2",
+      "route": "RTH-BHD",
+      "dest": "BHD",
+      "flaps": {
+        "line": "L2",
+        "route": "RTH-BHD",
+        "dest": "BHD"
+      }
+    },
+    {
+      "line": "2",
+      "route": "RTH-SCO",
+      "dest": "SCO",
+      "flaps": {
+        "line": "L2",
+        "route": "RTH-SCO",
+        "dest": "SCO"
+      }
+    },
+    {
+      "line": "2",
+      "route": "HBF-SIE",
+      "dest": "SIE",
+      "flaps": {
+        "line": "L2",
+        "route": "HBF-SIE",
+        "dest": "SIE"
+      }
+    },
+    {
+      "line": "3",
+      "route": "RTH-BHS",
+      "dest": "BHS",
+      "flaps": {
+        "line": "L3",
+        "route": "RTH-BHS",
+        "dest": "BHS"
+      }
+    },
+    {
+      "line": "3",
+      "route": "HBF-STZ",
+      "dest": "STZ",
+      "flaps": {
+        "line": "L3",
+        "route": "HBF-STZ",
+        "dest": "STZ"
+      }
+    },
+    {
+      "line": "3",
+      "route": "HBF-BNS",
+      "dest": "BNS",
+      "flaps": {
+        "line": "L3",
+        "route": "HBF-BNS",
+        "dest": "BNS"
+      }
+    },
+    {
+      "line": "3",
+      "route": "HBF-DT6",
+      "dest": "DT6",
+      "flaps": {
+        "line": "L3",
+        "route": "HBF-DT6",
+        "dest": "DT6"
+      }
+    },
+    {
+      "line": "4",
+      "route": "RTH-LOH",
+      "dest": "LOH",
+      "flaps": {
+        "line": "L4",
+        "route": "RTH-LOH",
+        "dest": "LOH"
+      }
+    },
+    {
+      "line": "4",
+      "route": "RTH-OET",
+      "dest": "OET",
+      "flaps": {
+        "line": "L4",
+        "route": "RTH-OET",
+        "dest": "OET"
+      }
+    },
+    {
+      "line": "4",
+      "route": "RTH-UNI",
+      "dest": "UNI",
+      "flaps": {
+        "line": "L4",
+        "route": "RTH-UNI",
+        "dest": "UNI"
+      }
+    },
+    {
+      "line": "4",
+      "route": "HBF-STZ",
+      "dest": "STZ",
+      "flaps": {
+        "line": "L4",
+        "route": "HBF-STZ",
+        "dest": "STZ"
+      }
+    },
+    {
+      "line": "4",
+      "route": "HBF-BNS",
+      "dest": "BNS",
+      "flaps": {
+        "line": "L4",
+        "route": "HBF-BNS",
+        "dest": "BNS"
+      }
     }
   ]
 }
