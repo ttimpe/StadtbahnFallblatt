@@ -16,20 +16,28 @@
         <select id="platformSelect">
             <option value="" disabled selected>Gleis...</option>
         </select>
-        <input type="text" id="kursInput" placeholder="Kurs" maxlength="2" style="width: 50px;">
-        <select id="lineSelect">
-            <option value="" disabled selected>Linie...</option>
-        </select>
-        <label>
-            <input type="checkbox" id="einsatzCheck"> Einsatzwagen
-        </label>
-        <select id="destSelect">
-            <option value="" disabled selected>Ziel...</option>
-        </select>
-        <button id="triggerBtn" disabled>Go</button>
-        <label style="margin-left: 10px;">
-            <input type="checkbox" id="liveCheck"> Live Data
-        </label>
+        <div id="manualControls">
+            <input type="text" id="kursInput" placeholder="Kurs" maxlength="2" style="width: 50px;">
+            <select id="lineSelect">
+                <option value="" disabled selected>Linie...</option>
+            </select>
+            <label>
+                <input type="checkbox" id="einsatzCheck"> Einsatzwagen
+            </label>
+            <select id="destSelect">
+                <option value="" disabled selected>Ziel...</option>
+            </select>
+            <button id="triggerBtn" disabled>Go</button>
+        </div>
+        <div id="ibisControls">
+            <input type="text" id="ibisInput" placeholder="l001 k01 z520">
+            <button id="ibisSendBtn">Senden</button>
+        </div>
+        <div class="mode-selector">
+            <label><input type="radio" name="dataMode" value="manual" checked> Manual</label>
+            <label><input type="radio" name="dataMode" value="live"> Live</label>
+            <label><input type="radio" name="dataMode" value="ibis"> IBIS</label>
+        </div>
         <button id="resetBtn">Reset</button>
     </div>
 

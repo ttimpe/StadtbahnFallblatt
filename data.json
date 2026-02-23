@@ -156,19 +156,40 @@
       "id": "NICHT_EINSTEIGEN",
       "label": "Nicht Einsteigen",
       "name": "Nicht Einsteigen",
-      "audio": "audio/NICHT_EINSTEIGEN.mp3"
+      "audio": "audio/NICHT_EINSTEIGEN.mp3",
+      "ibis": {
+        "kurs": [
+          90,
+          91,
+          92,
+          94,
+          96,
+          97,
+          98
+        ]
+      }
     },
     {
       "id": "SONDERFAHRT",
       "label": "Sonderfahrt",
       "name": "Sonderfahrt",
-      "audio": "audio/NICHT_EINSTEIGEN.mp3"
+      "audio": "audio/NICHT_EINSTEIGEN.mp3",
+      "ibis": {
+        "kurs": [
+          93
+        ]
+      }
     },
     {
       "id": "CITYEXPRESS",
       "label": "City-Express",
       "name": "CITYEXPRESS",
-      "audio": "audio/NICHT_EINSTEIGEN.mp3"
+      "audio": "audio/NICHT_EINSTEIGEN.mp3",
+      "ibis": {
+        "kurs": [
+          95
+        ]
+      }
     },
     {
       "id": "RTH_STILL",
@@ -180,7 +201,12 @@
       "id": "SCH",
       "label": "Schildesche",
       "name": "Schildesche",
-      "audio": "audio/SCH.mp3"
+      "audio": "audio/SCH.mp3",
+      "ibis": {
+        "ziel": [
+          120
+        ]
+      }
     },
     {
       "id": "BLANK_1",
@@ -192,61 +218,115 @@
       "id": "SUB",
       "label": "Sudbrackstr.",
       "name": "Sudbrackstr.",
-      "audio": "audio/SUB.wav"
+      "audio": "audio/SUB.wav",
+      "ibis": {
+        "ziel": []
+      }
     },
     {
       "id": "KKK",
       "label": "Kattenkamp",
       "name": "Kattenkamp",
-      "audio": "audio/KAT.wav"
+      "audio": "audio/KAT.wav",
+      "ibis": {
+        "ziel": [
+          122
+        ]
+      }
     },
     {
       "id": "BRB",
       "label": "Brackwede Bf.",
       "name": "Brackwede Bf.",
-      "audio": "audio/BRB.mp3"
+      "audio": "audio/BRB.mp3",
+      "ibis": {
+        "ziel": []
+      }
     },
     {
       "id": "BRW",
       "label": "Brackwede",
       "name": "Brackwede",
-      "audio": "audio/BRW.mp3"
+      "audio": "audio/BRW.mp3",
+      "ibis": {
+        "ziel": [
+          139,
+          140
+        ]
+      }
     },
     {
       "id": "SEE",
       "label": "Senne",
       "name": "Senne",
-      "audio": "audio/SEE.mp3"
+      "audio": "audio/SEE.mp3",
+      "ibis": {
+        "ziel": [
+          143,
+          144
+        ]
+      }
     },
     {
       "id": "SCO",
       "label": "Schüco",
       "name": "Schüco",
-      "audio": "audio/SCO.wav"
+      "audio": "audio/SCO.wav",
+      "ibis": {
+        "ziel": [
+          221,
+          251
+        ]
+      }
     },
     {
       "id": "BHD",
       "label": "Baumheide",
       "name": "Baumheide",
-      "audio": "audio/BHD.mp3"
+      "audio": "audio/BHD.mp3",
+      "ibis": {
+        "ziel": [
+          219,
+          259
+        ]
+      }
     },
     {
       "id": "MIL",
       "label": "Milse",
       "name": "Milse",
-      "audio": "audio/MIL.mp3"
+      "audio": "audio/MIL.mp3",
+      "ibis": {
+        "ziel": [
+          217,
+          257
+        ]
+      }
     },
     {
       "id": "ATH",
       "label": "Altenhagen",
       "name": "Altenhagen",
-      "audio": "audio/ATH.wav"
+      "audio": "audio/ATH.wav",
+      "ibis": {
+        "ziel": [
+          218
+        ]
+      }
     },
     {
       "id": "SIE",
       "label": "Sieker",
       "name": "Sieker",
-      "audio": "audio/SIE.mp3"
+      "audio": "audio/SIE.mp3",
+      "ibis": {
+        "ziel": [
+          238,
+          248,
+          239,
+          249
+        ]
+      }
     },
     {
       "id": "BLANK_5",
@@ -258,25 +338,48 @@
       "id": "ADH",
       "label": "Auf der Hufe",
       "name": "Auf der Hufe",
-      "audio": "audio/ADH.mp3"
+      "audio": "audio/ADH.mp3",
+      "ibis": {
+        "ziel": []
+      }
     },
     {
       "id": "BHS",
       "label": "Babenhausen Süd",
       "name": "Babenhausen Süd",
-      "audio": "audio/BHS.mp3"
+      "audio": "audio/BHS.mp3",
+      "ibis": {
+        "ziel": [
+          320,
+          350
+        ]
+      }
     },
     {
       "id": "BNS",
       "label": "Sieker Mitte",
       "name": "Sieker Mitte",
-      "audio": "audio/BNS1.mp3"
+      "audio": "audio/BNS1.mp3",
+      "ibis": {
+        "ziel": [
+          339,
+          349,
+          336,
+          346
+        ]
+      }
     },
     {
       "id": "STZ",
       "label": "Stieghorst",
       "name": "Stieghorst",
-      "audio": "audio/STZ1.mp3"
+      "audio": "audio/STZ1.mp3",
+      "ibis": {
+        "ziel": [
+          341,
+          342
+        ]
+      }
     },
     {
       "id": "BLANK_7",
@@ -288,31 +391,67 @@
       "id": "RTH",
       "label": "Rathaus",
       "name": "Rathaus",
-      "audio": "audio/RTH.mp3"
+      "audio": "audio/RTH.mp3",
+      "ibis": {
+        "ziel": [
+          130,
+          131
+        ]
+      }
+    },
+    {
+      "id": "LAG",
+      "label": "Landgericht",
+      "name": "Landgericht",
+      "audio": "audio/LAG.mp3",
+      "ibis": {
+        "ziel": [
+          114,
+          124
+        ]
+      }
     },
     {
       "id": "OET",
       "label": "Oetkerhalle",
       "name": "Oetkerhalle",
-      "audio": "audio/OET.mp3"
+      "audio": "audio/OET.mp3",
+      "ibis": {
+        "ziel": [
+          405
+        ]
+      }
     },
     {
       "id": "UNI",
       "label": "Universität",
       "name": "Universität",
-      "audio": "audio/UNI1.mp3"
+      "audio": "audio/UNI1.mp3",
+      "ibis": {
+        "ziel": [
+          410
+        ]
+      }
     },
     {
       "id": "LOH",
       "label": "Lohmannshof",
       "name": "Lohmannshof",
-      "audio": "audio/LOH.mp3"
+      "audio": "audio/LOH.mp3",
+      "ibis": {
+        "ziel": [
+          415
+        ]
+      }
     },
     {
       "id": "DT6",
       "label": "Dürkopp Tor 6",
       "name": "Dürkopp Tor 6",
-      "audio": "audio/DT6.wav"
+      "audio": "audio/DT6.wav",
+      "ibis": {
+        "ziel": []
+      }
     },
     {
       "id": "BLANK_8",
@@ -324,7 +463,13 @@
       "id": "HBF",
       "label": "Hauptbahnhof",
       "name": "Hauptbahnhof",
-      "audio": "audio/HBF.mp3"
+      "audio": "audio/HBF.mp3",
+      "ibis": {
+        "ziel": [
+          128,
+          129
+        ]
+      }
     }
   ],
   "lines": [

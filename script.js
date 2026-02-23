@@ -6,6 +6,7 @@ let drums = {
 };
 let livePollingInterval = null;
 let currentLiveTrip = null; // Tracks the trip currently being displayed
+let ibisState = { line: null, kurs: null, zielNum: null };
 
 // We only need one flap per module now
 function renderFlaps(containerId) {
@@ -151,17 +152,19 @@ function setupControls() {
         updatePlatforms(devLocSelect.value);
     }
 
+    const currentMode = () => document.querySelector('input[name="dataMode"]:checked')?.value || 'manual';
+
     devLocSelect.addEventListener('change', (e) => {
         displayData.deviceLocation = e.target.value;
         updatePlatforms(e.target.value);
-        if (!destSelect.value) applyDefaultState(false);
+        if (currentMode() !== 'ibis' && !destSelect.value) applyDefaultState(false);
     });
 
     platformSelect.addEventListener('change', (e) => {
         const platformNumEl = document.querySelector('.platform-number');
         if (platformNumEl) platformNumEl.textContent = e.target.value;
         updateTriggerState();
-        if (!destSelect.value) applyDefaultState(false);
+        if (currentMode() !== 'ibis' && !destSelect.value) applyDefaultState(false);
     });
 
     // Populate logical lines (unique line numbers)
@@ -223,20 +226,101 @@ function setupControls() {
         document.documentElement.style.setProperty('--line-bg', '');
         document.documentElement.style.setProperty('--line-fg', '');
 
-        const p1 = updateFlapById('lineFlaps', 'BLANK_BLUE'); // Or whatever is the primary blank
+        const p1 = updateFlapById('lineFlaps', 'BLANK_BLUE');
         const p2 = updateFlapById('routeFlaps', 'BLANK');
         const p3 = updateFlapById('destFlaps', 'BLANK_1');
         await Promise.all([p1, p2, p3]);
+
+        setMode('manual');
+        document.querySelector('input[name="dataMode"][value="manual"]').checked = true;
     });
 
-    const liveCheck = document.getElementById('liveCheck');
-    liveCheck.addEventListener('change', (e) => {
-        if (e.target.checked) {
-            startLivePolling();
-        } else {
-            stopLivePolling();
-        }
+    document.querySelectorAll('input[name="dataMode"]').forEach(radio => {
+        radio.addEventListener('change', (e) => {
+            if (e.target.checked) setMode(e.target.value);
+        });
     });
+
+    const ibisInput = document.getElementById('ibisInput');
+    document.getElementById('ibisSendBtn').addEventListener('click', () => handleIbisTelegram(ibisInput.value));
+    ibisInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') handleIbisTelegram(ibisInput.value);
+    });
+}
+
+function setMode(mode) {
+    const manualControls = document.getElementById('manualControls');
+    const ibisControls = document.getElementById('ibisControls');
+
+    if (mode === 'manual') {
+        manualControls.style.display = 'flex';
+        ibisControls.style.display = 'none';
+        stopLivePolling();
+    } else if (mode === 'live') {
+        manualControls.style.display = 'none';
+        ibisControls.style.display = 'none';
+        startLivePolling();
+    } else if (mode === 'ibis') {
+        manualControls.style.display = 'none';
+        ibisControls.style.display = 'flex';
+        stopLivePolling();
+        ibisState = { line: null, kurs: null, zielNum: null };
+    }
+}
+
+function parseIbisTelegram(raw) {
+    const result = { line: null, kurs: null, zielNum: null };
+    const tokens = raw.trim().split(/\s+/);
+
+    for (const token of tokens) {
+        const lower = token.toLowerCase();
+        const lineMatch = lower.match(/^l(\d+)$/);
+        if (lineMatch) { result.line = String(parseInt(lineMatch[1], 10)); continue; }
+        const kursMatch = lower.match(/^k(\d+)$/);
+        if (kursMatch) { result.kurs = kursMatch[1]; continue; }
+        const zielMatch = lower.match(/^z(\d{3})$/);
+        if (zielMatch) { result.zielNum = parseInt(zielMatch[1], 10); continue; }
+    }
+
+    return result;
+}
+
+async function handleIbisTelegram(raw) {
+    if (!displayData || !raw || raw.trim() === '') return;
+
+    const parsed = parseIbisTelegram(raw);
+    document.getElementById('ibisInput').value = '';
+
+    // Special kurs telegrams (Nicht Einsteigen, Sonderfahrt, etc.) fire immediately
+    if (parsed.kurs !== null) {
+        const kursNum = parseInt(parsed.kurs, 10);
+        const specialDest = displayData.destinations.find(d =>
+            d.ibis && Array.isArray(d.ibis.kurs) && d.ibis.kurs.includes(kursNum)
+        );
+        if (specialDest) {
+            ibisState = { line: null, kurs: null, zielNum: null };
+            await triggerDisplayUpdate('1', specialDest.id, parsed.kurs);
+            return;
+        }
+    }
+
+    // Accumulate normal telegrams
+    if (parsed.line !== null) ibisState.line = parsed.line;
+    if (parsed.kurs !== null) ibisState.kurs = parsed.kurs;
+    if (parsed.zielNum !== null) ibisState.zielNum = parsed.zielNum;
+
+    // Fire once all three are present; keep state so subsequent telegrams can override
+    if (ibisState.line === null || ibisState.kurs === null || ibisState.zielNum === null) return;
+
+    const match = displayData.destinations.find(d =>
+        d.ibis && Array.isArray(d.ibis.ziel) && d.ibis.ziel.includes(ibisState.zielNum)
+    );
+    if (!match) {
+        console.warn(`IBIS: no destination for Ziel ${ibisState.zielNum}`);
+        return;
+    }
+
+    await triggerDisplayUpdate(ibisState.line, match.id, ibisState.kurs);
 }
 
 function startLivePolling() {
@@ -550,7 +634,8 @@ async function triggerDisplayUpdate(logicalLine, logicalDest, kursValue) {
     const isEinsatzwagen = !isSpecialKurs && (document.getElementById('einsatzCheck').checked || logicalLine === "E");
 
     // Check for terminus logic
-    const isTerminus = routeFlapObj.stops && routeFlapObj.stops.length > 0 && routeFlapObj.stops[routeFlapObj.stops.length - 1] === displayData.deviceLocation;
+    const isTerminus = destFlapObj.id === displayData.deviceLocation ||
+        (routeFlapObj.stops && routeFlapObj.stops.length > 0 && routeFlapObj.stops[routeFlapObj.stops.length - 1] === displayData.deviceLocation);
 
     if (isTerminus) {
         document.documentElement.style.setProperty('--line-bg', '');
